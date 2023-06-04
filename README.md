@@ -1,2 +1,11 @@
-# ShopSpring
-این ریپازیتوری حاوی کد منبع فروشگاه آنلاین است که با استفاده از فریم‌ورک Spring Boot، جاوااسکریپت و HTML/CSS نوشته شده است. در این فروشگاه، مشتریان می‌توانند محصولات مورد نیاز خود را از طریق سبد خرید دریافت کرده و پرداخت آنلاین را انجام دهند.
+# ShopSpring(For sample work)
+
+زبان برنامه‌نویسی: Java
+فریم‌ورک: Spring Boot 2.7.4
+معماری برنامه: MVC (Model-View-Controller)
+واسط کاربری: AngularJS، Bootstrap، JSP, HTML, CSS
+تکنولوژی‌های وب: REST API، JWT Token، HTTPS/SSL
+کتابخانه‌های جاوا: Gson
+ابزارهای توسعه: Maven
+پرداخت آنلاین: Zarin Pal
+ابزارهای دیگر: Sweet Alert 2، Text Angular 1.5.16، Swagger 2، Font Awesome 5.14.0
