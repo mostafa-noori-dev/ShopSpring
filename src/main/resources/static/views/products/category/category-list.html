@@ -1,0 +1,55 @@
+<div ng-controller="categoryListCtrl">
+    <div class="container p-3">
+        <div class="row">
+            <div class="col">
+                <H1>Products Category List</H1>
+                <a class="btn-add btn btn-sm btn-primary" ng-click="changeMenu('category-add')">Add New +</a>
+                <a class="btn-colors-list btn btn-sm btn-success m-r-10" ng-click="changeMenu('color-list')">Colors</a>
+                <a class="btn-sizes-list btn-sm btn-info m-r-10" ng-click="changeMenu('size-list')">Sizes</a>
+                <br/>
+                <br/>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Enable</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in dataList">
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>
+                            <img style="width: 60px" src="/api/utils/upload/files/{{data.image}}"/>
+                        </td>
+                        <td>{{data.title}}</td>
+                        <td>
+                            <i class="fa fa-check" ng-show="data.enable"></i>
+                            <i class="fa fa-times" ng-show="!data.enable"></i>
+                        </td>
+                        <td>
+                            <a ng-click="editItem(data.id)"><i class="fa fa-edit color-green cursor-pointer"></i></a>
+                            <a ng-click="deleteItem(data.id)"><i class="fa fa-times color-red cursor-pointer"></i></a>
+                            <a title="Show Products" ng-click="showProducts(data)"><i class="fa fa-cubes color-blue"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <div>
+                    <nav>
+                        <ul class="pagination pagination-sm">
+                            <li ng-repeat="i in range(pageCount) track by $index" class="page-item" aria-current="page">
+                                <span class="page-link" ng-click="changePage($index)">
+                                    {{$index+1}}
+                                </span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div ng-controller="userAddCtrl">
+    <div class="container p-3">
+        <br/>
+        <br/>
+        <div class="card">
+            <h5 class="card-header">
+                Add a new User
+                <a ng-click="changeMenu('user-list')" class="btn btn-sm btn-primary btn-return">Return</a>
+            </h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col login-box-holder">
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" ng-model="data.firstName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" ng-model="data.lastName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" ng-model="data.username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" ng-model="data.password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" ng-model="data.email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="role" class="form-label">Role</label>
+                                    <select class="form-control" id="role" ng-model="data.role">
+                                        <option value="ADMIN">Administrator</option>
+                                        <option value="USER">User</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="enable" class="form-label">Enable</label>
+                                    <select class="form-control" id="enable" ng-model="data.enable">
+                                        <option value="true" ng-selected="data.enable">Yes</option>
+                                        <option value="false" ng-selected="!data.enable">No</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary" ng-click="addData()">Insert</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

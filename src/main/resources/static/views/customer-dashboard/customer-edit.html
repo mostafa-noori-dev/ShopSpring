@@ -1,0 +1,67 @@
+<div ng-controller="customerEditCtrl">
+    <div class="container p-3">
+        <br/>
+        <br/>
+        <div class="card">
+            <h5 class="card-header">
+                Edit User
+            </h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col login-box-holder">
+                                <div class="mb-3">
+                                    <label>First Name</label>
+                                    <input type="text" placeholder="First Name" class="form-control" id="firstName"
+                                           ng-model="data.firstName">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Last Name</label>
+                                    <input type="text" placeholder="Last Name" class="form-control" id="lastName"
+                                           ng-model="data.lastName">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Username</label>
+                                    <span class="form-control">{{data.username}}</span>
+                                </div>
+                                <div class="mb-3" ng-show="!userLoggedIn">
+                                    <label>Password</label>
+                                    <input type="password" placeholder="Password" class="form-control" id="password"
+                                           ng-model="data.password">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="Email" class="form-control" id="email"
+                                           ng-model="data.email">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Mobile</label>
+                                    <input type="text" placeholder="Mobile" class="form-control" id="mobile"
+                                           ng-model="data.mobile">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Tel</label>
+                                    <input type="tel" placeholder="Tel" class="form-control" id="tel"
+                                           ng-model="data.tel">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Address</label>
+                                    <textarea placeholder="Address" ng-model="data.address" class="form-control"
+                                              id="address"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Postal Code</label>
+                                    <input type="text" placeholder="PostalCode" class="form-control" id="postal"
+                                           ng-model="data.postalCode">
+                                </div>
+                                <button type="submit" class="btn btn-primary" ng-click="editData()">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

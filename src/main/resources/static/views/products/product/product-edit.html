@@ -1,0 +1,108 @@
+<div ng-controller="productEditCtrl">
+    <div class="container p-3">
+        <br/>
+        <br/>
+        <div class="card">
+            <div class="card-header">
+                Edit Product
+                <a ng-click="changeMenuWithCategory('product-list')"
+                   class="btn btn-sm btn-primary float-right">Return</a>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col login-box-holder">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" ng-model="data.title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Price</label>
+                                    <input type="number" class="form-control" id="price" ng-model="data.price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exists" class="form-label">Exists</label>
+                                    <select class="form-control" id="exists" ng-model="data.exists">
+                                        <option value="true" ng-selected="data.exists">Yes</option>
+                                        <option value="false" ng-selected="!data.exists">No</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="enable" class="form-label">Enable</label>
+                                    <select class="form-control" id="enable" ng-model="data.enable">
+                                        <option value="true" ng-selected="data.enable">Yes</option>
+                                        <option value="false" ng-selected="!data.enable">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group border-form p-3 m-1">
+                                    <label for="colors">Colors</label>
+                                    <div id="colors" ng-repeat="color in allColors">
+                                        <input type="checkbox"  id="colors_{{color.id}}"   ng-click="onColorChanged(color) "
+                                               ng-model="data.colors[color.id]"/>
+                                        <label for="colors_{{color.id}}">{{color.name}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group border-form p-3 m-1">
+                                    <label for="sizes">Sizes</label>
+                                    <div id="sizes" ng-repeat="size in allSizes">
+                                        <input id="sizes_{{size.id}}"
+                                               type="checkbox"  ng-click="onSizeChanged(size)"
+                                               ng-model="data.sizes[size.id]"/>
+                                        <label for="sizes_{{size.id}}">{{size.title}}</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-border p-3 m-1">
+                                    <label for="features" class="form-label">Features</label>
+                                    <div class="row">
+                                        <div class="col col-5">
+                                            <label for="key" class="form-label">Key</label>
+                                            <input type="text" id="key" ng-model="newFeature.key" class="form-control">
+                                        </div>
+                                        <div class="col col-5">
+                                            <label for="value" class="form-label">Value</label>
+                                            <input type="text" id="value" ng-model="newFeature.value"
+                                                   class="form-control">
+                                        </div>
+                                        <div class=" col col-2">
+                                            <br/>
+                                            <input type="button" value="+" class="btn btn-sm btn-success"
+                                                   ng-click="addFeature()"/>
+                                        </div>
+                                    </div>
+                                    <ul id="features">
+                                        <li ng-repeat="feature in featureList">
+                                            {{feature.key}} : {{feature.value}}
+                                            <i class="fa fa-times color-red m-l-10"
+                                               ng-click="deleteFeature(feature.id)"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <div text-angular="text-angular" id="description" name="description"
+                                         ng-model="data.description"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Image</label>
+                                    <div class="row">
+                                        <div class="col col-1">
+                                            <img src="/api/utils/upload/files/{{data.image}}" width="60px"/>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" readonly="readonly" disabled="disabled"
+                                                   class="form-control" id="image" ng-model="data.image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-include="'/views/utils/fileUploader.html'"></div>
+                                <button type="submit" class="btn btn-primary" ng-click="editData()">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
